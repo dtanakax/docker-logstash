@@ -31,7 +31,7 @@ git pull後に
 起動したelasticsearchコンテナをリンクしてKibanaコンテナを起動
 (注: aliasをelasticsearchと指定して下さい。)  
 
-    $ docker run -p 5043:5043 -p 514:514 --link es:elasticsearch -it tanaka0323/kibana
+    $ docker run -p 5043:5043 -p 5000:5000 --link es:elasticsearch -it tanaka0323/kibana
 
 ### 利用可能なボリューム
 

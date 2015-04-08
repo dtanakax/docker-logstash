@@ -36,10 +36,10 @@ RUN chmod +x /start.sh
 VOLUME ["/opt/conf", "/opt/certs"]
 
 # Set the port
-# 514  syslog
+# 5000  syslog
 # 5043 lumberjack
 # 9292 logstash ui
-EXPOSE 514 5043 9292
+EXPOSE 5000 5043 9292
 
 # Executing sh
 ENTRYPOINT ./start.sh
