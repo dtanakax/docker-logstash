@@ -35,16 +35,16 @@ git pull後に
 
 ### logspoutでDockerコンテナのログの集約・ルーティング
 
-1. elkstuckを起動
+1. elkstackを起動
 
     ここでは[Docker Compose設定サンプル](https://bitbucket.org/tanaka0323/compose-examples)を使用します。
 
-        $ cd compose-examples/elkstuck
+        $ cd compose-examples/elkstack
         $ docker-compose up
 
 2. logstashコンテナのIPアドレスを取得します。
 
-        $ docker inspect --format '{{ .NetworkSettings.IPAddress }}' elkstuck_logstash_1
+        $ docker inspect --format '{{ .NetworkSettings.IPAddress }}' elkstack_logstash_1
         172.17.X.XX
 
 3. 取得したIPアドレスを指定しlogspoutを起動
