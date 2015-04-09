@@ -51,7 +51,7 @@ git pull後に
 
         $ docker run -d --name log -v=/var/run/docker.sock:/tmp/docker.sock gliderlabs/logspout syslog://<ipaddr>:5000
 
-    以上で、Kibanaをブラウザから起動すると全コンテナのログが設定可能になります。
+    以上で、Kibanaをブラウザから起動すると全コンテナのシステムログを可視化されます。
 
 ### 利用可能なボリューム
 
