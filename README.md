@@ -33,6 +33,26 @@ git pull後に
 
     $ docker run -p 5043:5043 -p 5000:5000 --link es:elasticsearch -it tanaka0323/kibana
 
+### logspoutでDockerコンテナのログの集約・ルーティング
+
+1. elkstackを起動
+
+    ここでは[Fig設定サンプル](https://bitbucket.org/tanaka0323/fig-examples)を使用します。
+
+        $ cd fig-examples/elkstack
+        $ fig up
+
+2. logstashコンテナのIPアドレスを取得します。
+
+        $ docker inspect --format '{{ .NetworkSettings.IPAddress }}' elkstack_logstash_1
+        172.17.X.XX
+
+3. 取得したIPアドレスを指定しlogspoutを起動
+
+        $ docker run -d --name log -v=/var/run/docker.sock:/tmp/docker.sock gliderlabs/logspout syslog://<ipaddr>:5000
+
+    以上で、Kibanaをブラウザから起動すると全コンテナのログが設定可能になります。
+
 ### 利用可能なボリューム
 
 以下のボリュームが利用可能
