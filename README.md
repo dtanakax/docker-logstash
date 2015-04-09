@@ -37,9 +37,9 @@ git pull後に
 
 1. elkstackを起動
 
-    ここでは[Fig設定サンプル](https://bitbucket.org/tanaka0323/fig-examples)を使用します。
+    ここでは[Docker Compose設定サンプル](https://bitbucket.org/tanaka0323/compose-examples)を使用します。
 
-        $ cd fig-examples/elkstack
+        $ cd compose-examples/elkstack
         $ fig up
 
 2. logstashコンテナのIPアドレスを取得します。
