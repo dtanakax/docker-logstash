@@ -40,7 +40,7 @@ git pull後に
     ここでは[Docker Compose設定サンプル](https://bitbucket.org/tanaka0323/compose-examples)を使用します。
 
         $ cd compose-examples/elkstack
-        $ fig up
+        $ docker-compose up
 
 2. logstashコンテナのIPアドレスを取得します。
 
