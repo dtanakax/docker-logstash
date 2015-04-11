@@ -1,12 +1,15 @@
 ![logstash 1.4.2](https://img.shields.io/badge/logstash-1.4.2-brightgreen.svg) ![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)
 
-# docker-logstash
+docker-logstash
+=====================
 
-### Base Docker Image
+Base Docker Image
+---------------------
 
 [debian:wheezy](https://registry.hub.docker.com/_/debian/)
 
-### 説明
+説明
+---------------------
 
 Logstash Dockerコンテナイメージです。
 
@@ -14,7 +17,8 @@ Logstash Dockerコンテナイメージです。
 [Dockerとは？](https://docs.docker.com/)  
 [Docker Command Reference](https://docs.docker.com/reference/commandline/cli/)
 
-### 使用方法
+使用方法
+---------------------
 
 git pull後に
 
@@ -33,7 +37,8 @@ git pull後に
 
     $ docker run -p 5043:5043 -p 5000:5000 --link es:elasticsearch -it tanaka0323/kibana
 
-### logspoutでDockerコンテナのログの集約・ルーティング
+logspoutでDockerコンテナのログの集約・ルーティング
+---------------------
 
 1. elkstackを起動
 
@@ -53,20 +58,23 @@ git pull後に
 
     以上で、Kibanaをブラウザから起動すると全コンテナのシステムログを可視化されます。
 
-### 利用可能なボリューム
+利用可能なボリューム
+---------------------
 
 以下のボリュームが利用可能
 
     /opt/conf       # 設定ファイル
     /opt/certs      # 秘密鍵ファイル
 
-### Docker Composeでの使用方法
+Docker Composeでの使用方法
+---------------------
 
 [Docker Composeとは](https://docs.docker.com/compose/)  
 
 [設定ファイル記述例](https://bitbucket.org/tanaka0323/compose-examples)
 
-### License
+License
+---------------------
 
 The MIT License
 Copyright (c) 2015 Daisuke Tanaka
