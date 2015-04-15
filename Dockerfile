@@ -26,7 +26,6 @@ RUN mkdir -p /opt/certs && \
 
 # Adding the configuration file
 COPY logstash.conf /opt/conf/logstash.conf
-COPY collectd-types /opt/collectd-types.db
 COPY logstash-forwarder.key /opt/certs/logstash-forwarder.key
 COPY logstash-forwarder.crt /opt/certs/logstash-forwarder.crt
 COPY start.sh /start.sh
