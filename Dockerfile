@@ -18,9 +18,6 @@ RUN curl -k https://download.elasticsearch.org/logstash/logstash/logstash-$LOGST
     mv -f /logstash-$LOGSTASH_VERSION /opt/logstash && \
     rm -f logstash.tar.gz
 
-# Install contrib plugins
-RUN /opt/logstash/bin/plugin install contrib
-
 RUN mkdir -p /opt/certs && \
     mkdir -p /opt/conf
 
