@@ -1,4 +1,4 @@
-![logstash 1.4.2](https://img.shields.io/badge/logstash-1.4.2-brightgreen.svg) ![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)
+![logstash 1.5.0.rc2](https://img.shields.io/badge/logstash-1.5.0.rc2-brightgreen.svg) ![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)
 
 docker-logstash
 =====================
