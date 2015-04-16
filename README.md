@@ -6,7 +6,7 @@ docker-logstash
 Base Docker Image
 ---------------------
 
-[debian:wheezy](https://registry.hub.docker.com/_/debian/)
+[tanaka0323/java7](https://bitbucket.org/tanaka0323/docker-java7)
 
 説明
 ---------------------
