@@ -5,7 +5,7 @@ FROM tanaka0323/java7
 MAINTAINER Daisuke Tanaka, tanaka@infocorpus.com
 
 ENV DEBIAN_FRONTEND noninteractive
-ENV LOGSTASH_VERSION 1.4.2
+ENV LOGSTASH_VERSION 1.5.0.rc2
 
 RUN apt-get update && \
     apt-get install -y curl && \
@@ -18,9 +18,6 @@ RUN curl -k https://download.elasticsearch.org/logstash/logstash/logstash-$LOGST
     mv -f /logstash-$LOGSTASH_VERSION /opt/logstash && \
     rm -f logstash.tar.gz
 
-# Install contrib plugins
-RUN /opt/logstash/bin/plugin install contrib
-
 RUN mkdir -p /opt/certs && \
     mkdir -p /opt/conf
 
@@ -30,6 +27,13 @@ COPY logstash-forwarder.key /opt/certs/logstash-forwarder.key
 COPY logstash-forwarder.crt /opt/certs/logstash-forwarder.crt
 COPY start.sh /start.sh
 RUN chmod +x /start.sh
+
+# Install popular plugins
+RUN /opt/logstash/bin/plugin install \
+    logstash-input-kafka \
+    logstash-input-lumberjack \
+    logstash-output-influxdb \
+    logstash-output-kafka
 
 # Define mountable directories.
 VOLUME ["/opt/conf", "/opt/certs"]
