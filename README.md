@@ -11,7 +11,7 @@ Base Docker Image
 説明
 ---------------------
 
-Logstash Dockerコンテナイメージです。
+Logstash Dockerコンテナ作成設定
 
 [Logstashとは？](https://www.elastic.co/products/logstash)  
 [Dockerとは？](https://docs.docker.com/)  
