@@ -38,11 +38,12 @@ RUN /opt/logstash/bin/plugin install \
 # Define mountable directories.
 VOLUME ["/opt/conf", "/opt/certs"]
 
+ENTRYPOINT ["./start.sh"]
+
 # Set the port
 # 5000  syslog
 # 5043 lumberjack
 # 9292 logstash ui
 EXPOSE 5000 5043 9292
 
-# Executing sh
-ENTRYPOINT ./start.sh
+CMD ["/opt/logstash/bin/logstash"]

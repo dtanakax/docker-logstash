@@ -1,5 +1,8 @@
 #!/bin/bash
 set -e
 
-# Executing
-exec /opt/logstash/bin/logstash agent -f /opt/conf/logstash.conf
+if [ "$1" = "/opt/logstash/bin/logstash" ]; then
+    exec "$1" agent -f /opt/conf/logstash.conf
+else
+    exec "$@"
+fi
