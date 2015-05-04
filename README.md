@@ -6,46 +6,12 @@ docker-logstash
 Base Docker Image
 ---------------------
 
-[dtanakax/debianjp:wheezy](https://registry.hub.docker.com/u/dtanakax/debianjp/)
+[dtanakax/java7](https://registry.hub.docker.com/u/dtanakax/java7/)
 
 説明
 ---------------------
 
 Logstash Dockerコンテナイメージです。
-
-
-使用方法
----------------------
-
-最初に[elasticsearchコンテナ](https://bitbucket.org/dtanakax/docker-elasticsearch)を起動
-
-    $ docker run --name es -d -p 9200:9200 -it dtanakax/elasticsearch
-
-起動したelasticsearchコンテナをリンクしてKibanaコンテナを起動
-(注: aliasをelasticsearchと指定して下さい。)  
-
-    $ docker run -p 5043:5043 -p 5000:5000 --link es:elasticsearch -it dtanakax/kibana
-
-logspoutでDockerコンテナのログの集約・ルーティング
----------------------
-
-1. elkstackを起動
-
-    ここでは[Docker Compose設定サンプル](https://bitbucket.org/dtanakax/compose-examples)を使用します。
-
-        $ cd compose-examples/elkstack
-        $ docker-compose up
-
-2. logstashコンテナのIPアドレスを取得します。
-
-        $ docker inspect --format '{{ .NetworkSettings.IPAddress }}' elkstack_logstash_1
-        172.17.X.XX
-
-3. 取得したIPアドレスを指定しlogspoutを起動
-
-        $ docker run -d --name log -v=/var/run/docker.sock:/tmp/docker.sock gliderlabs/logspout syslog://<ipaddr>:5000
-
-    以上で、Kibanaをブラウザから起動すると全コンテナのシステムログを可視化されます。
 
 利用可能なボリューム
 ---------------------
