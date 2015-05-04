@@ -1,11 +1,11 @@
 # Set the base image
-FROM tanaka0323/java7
+FROM dtanakax/java7
 
 # File Author / Maintainer
-MAINTAINER Daisuke Tanaka, tanaka@infocorpus.com
+MAINTAINER Daisuke Tanaka, dtanakax@gmail.com
 
 ENV DEBIAN_FRONTEND noninteractive
-ENV LOGSTASH_VERSION 1.5.0.rc2
+ENV LOGSTASH_VERSION 1.5.0-rc3
 
 RUN apt-get update && \
     apt-get install -y curl && \
