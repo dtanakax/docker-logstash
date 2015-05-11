@@ -5,7 +5,7 @@ FROM dtanakax/java7
 MAINTAINER Daisuke Tanaka, dtanakax@gmail.com
 
 ENV DEBIAN_FRONTEND noninteractive
-ENV LOGSTASH_VERSION 1.5.0-rc3
+ENV LOGSTASH_VERSION 1.5.0.rc4
 
 RUN apt-get update && \
     apt-get install -y curl && \
