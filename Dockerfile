@@ -5,7 +5,7 @@ FROM dtanakax/java7
 MAINTAINER Daisuke Tanaka, dtanakax@gmail.com
 
 ENV DEBIAN_FRONTEND noninteractive
-ENV LOGSTASH_VERSION 1.5.0.rc4
+ENV LOGSTASH_VERSION 1.5.0
 
 RUN apt-get update && \
     apt-get install -y curl && \
@@ -41,7 +41,7 @@ VOLUME ["/opt/conf", "/opt/certs"]
 ENTRYPOINT ["./start.sh"]
 
 # Set the port
-# 5000  syslog
+# 5000 syslog
 # 5043 lumberjack
 # 9292 logstash ui
 EXPOSE 5000 5043 9292
